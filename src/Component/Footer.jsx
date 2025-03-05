@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="max-w-6xl mx-auto px-4">
             <div className="mb-6 md:mb-0 text-center md:text-left">
               <h2 className="text-white font-bold text-xl flex items-center justify-center md:justify-start">
-                <span className="mr-2"></span> LEFTLOGO
+                <span className="mr-2"></span> AUTOMICLLY
               </h2>
             </div>
             
@@ -65,7 +65,7 @@ const Footer = () => {
     
             <div className="text-center text-sm text-gray-500 mt-10 mb-0">
               &copy;  Copyright 2025. All rights reserved by <span></span>
-              <span className="text-white font-semibold">LEFTLOGO</span>
+              <span className="text-white font-semibold">AUTOMICLLY</span>
             </div>
           </div>
         </div>

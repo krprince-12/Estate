@@ -22,13 +22,13 @@ const Navbar = () => {
         <nav className="w-full flex items-center justify-between py-4 px-8 border border-gray-800 mt-10 rounded-xl bg-gray-800/20">
           <div className="flex items-center space-x-2">
             <img src="/logo.jpg" alt="Logo" className="h-9 w-10" />
-            <span className="text-xl font-semibold">LEFTLOGO</span>
+            <span className="text-xl font-semibold">AUTOMICLLY</span>
           </div>
           <div className="hidden md:flex space-x-6 text-gray-400">
             <a href="#" onClick={() => handleScroll('pricing')} className="hover:text-white">Pricing</a>
             <a href="#" onClick={() => handleScroll('about')} className="hover:text-white">About Us</a>
             <a href="#" onClick={() => handleScroll('contact')} className="hover:text-white">Contact Us</a>
-            <a href="#" onClick={() => handleScroll('hero')} className="hover:text-white">How it works</a>
+            <a href="#" onClick={() => handleScroll('subscription')} className="hover:text-white">How it works</a>
             <a href="#" onClick={() => handleScroll('faq')} className="hover:text-white">FAQ'S</a>
           </div>
           <button className="hidden md:block bg-gradient-to-r from-teal-400 to-blue-500 text-white px-6 py-2 rounded-xl font-medium shadow-lg hover:opacity-90">
