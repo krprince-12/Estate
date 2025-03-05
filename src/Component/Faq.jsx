@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
-const Faqs= [
+
+const Faqs = [
   {
     question: "Why do this instead of hiring a COO?",
     answer:
@@ -44,7 +45,7 @@ const Faqs= [
   },
 ];
 
-const Faq=()=> {
+const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -53,45 +54,36 @@ const Faq=()=> {
 
   return (
     <motion.div 
-    initial={{opacity:0,y:50}}
-    whileInView={{opacity:1,y:0}}
-    transition={{duration:0.5}}
-    
-    
-    className=" mx-auto p-6 text-white bg-gray-900 w-full">
-    <div className="text-center w-full py-35 px-10 border border-gray-800 rounded-xl mt-12 bg-gray-800/20">
-    <div className="mt-16 w-full ">
-
-<span className="bg-gray-700 text-white px-4 py-1 rounded-full text-sm font-medium ">FREQUENTLY ASKED QUESTIONS</span>
-<h2 className="text-4xl font-bold mt-6 overflow-hidden whitespace-nowrap">FAQ'S</h2>
-</div>
-
-      <div className="space-y-4 mt-10 mb-10">
-       
-        {Faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 rounded-lg p-4 cursor-pointer shadow-md"
-          >
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="mx-auto p-6 text-white bg-gray-900 w-full"
+    >
+      <div className="text-center w-full py-10 px-4 sm:px-8 border border-gray-800 rounded-xl mt-10 bg-gray-800/20">
+        <div className="mt-16 w-full">
+          <span className="bg-gray-700 text-white px-4 py-1 rounded-full text-sm font-medium">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-6">FAQ'S</h2>
+        </div>
+        <div className="space-y-4 mt-10 mb-10">
+          {Faqs.map((faq, index) => (
             <div
-              className="flex justify-between items-center"
+              key={index}
+              className="bg-gray-800 rounded-lg p-4 cursor-pointer shadow-md"
               onClick={() => toggleFAQ(index)}
             >
-              <h3 className="text-lg font-semibold">{faq.question}</h3>
-              {openIndex === index ? <ChevronUp /> : <ChevronDown />}
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg font-semibold">{faq.question}</h3>
+                {openIndex === index ? <ChevronUp /> : <ChevronDown />}
+              </div>
+              {openIndex === index && (
+                <p className="mt-2 text-gray-300 break-words">{faq.answer}</p>
+              )}
             </div>
-            {openIndex === index && (
-              <p className="mt-2 text-gray-300 ">{faq.answer}</p>
-            )}
-          </div>
-        ))}
-            </div>
-  
+          ))}
+        </div>
       </div>
-      </motion.div>
-
+    </motion.div>
   );
-}
-
+};
 
 export default Faq;

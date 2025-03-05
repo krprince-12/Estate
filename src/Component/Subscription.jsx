@@ -11,8 +11,8 @@ const Subscription = () => {
       className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="mt-16 text-center">
-        <span className="bg-gray-700 text-white px-4 py-1 rounded-full text-sm font-medium">SUBSCRIPTION STEPS</span>
-        <h2 className="text-4xl font-bold mt-6">Here's how it works</h2>
+        <span className="bg-gray-700 text-white px-4 py-1 rounded-full text-sm font-medium overflow-hidden whitespace-nowrap">SUBSCRIPTION STEPS</span>
+        <h2 className="text-4xl font-bold mt-6 overflow-hidden whitespace-nowrap">Here's how it works</h2>
       </div>
 
       <div className="relative flex justify-center mt-12">

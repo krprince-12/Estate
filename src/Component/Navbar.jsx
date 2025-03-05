@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +21,7 @@ const Navbar = () => {
       >
         <nav className="w-full flex items-center justify-between py-4 px-8 border border-gray-800 mt-10 rounded-xl bg-gray-800/20">
           <div className="flex items-center space-x-2">
-            <img src="/logo.jpg" alt="Logo" className="h-9" />
+            <img src="/logo.jpg" alt="Logo" className="h-9 w-10" />
             <span className="text-xl font-semibold">LEFTLOGO</span>
           </div>
           <div className="hidden md:flex space-x-6 text-gray-400">
