@@ -1,77 +1,91 @@
-import React from 'react';
-import { FaTwitter } from "react-icons/fa";
-import { motion } from 'framer-motion';
+import React from "react";
 
 const Footer = () => {
   return (
-    <>
-      <motion.footer 
-        initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="bg-gray-900 text-gray-400 py-6 px-3"
-      >
-        <div className="w-full border border-gray-800 rounded-xl mt-10 bg-gray-800/20 py-10 md:py-20">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="mb-6 md:mb-0 text-center md:text-left">
-              <h2 className="text-white font-bold text-xl flex items-center justify-center md:justify-start">
-                <span className="mr-2"></span> AUTOMICLLY
-              </h2>
-            </div>
-            
-            <div className="flex flex-col md:flex-row justify-between items-center md:items-start border-b border-gray-700 pb-8 mt-10">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
-                <div>
-                  <h3 className="text-white font-semibold">General</h3>
-                  <ul className="mt-2 space-y-2">
-                    <li><a href="#" className="hover:text-white">About Us</a></li>
-                    <li><a href="#" className="hover:text-white">Contact</a></li>
-                    <li><a href="#" className="hover:text-white">Blog</a></li>
-                  </ul>
-                </div>
+    <div
+      className="relative bg-black text-white p-10 md:p-20 min-h-screen"
+      style={{
+        backgroundImage: "url('/footer.png')"
+      }}
+    >
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between">
+        {/* Left Section */}
+        <div className="md:w-1/2">
+          <h1 className="text-2xl md:text-2xl font-bold">
+            So? What are you going to do about it?
+          </h1>
+          <p className="mt-3 text-lg text-gray-400">
+            (Fix your broken systems? Or Just dream?)
+          </p>
+          <button className="mt-5 px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200">
+            Book a Call
+          </button>
+        </div>
 
-                <div>
-                  <h3 className="text-white font-semibold">Case Studies</h3>
-                  <ul className="mt-2 space-y-2">
-                    <li><a href="#" className="hover:text-white">Content Marketing</a></li>
-                    <li><a href="#" className="hover:text-white">Print-on-Demand</a></li>
-                    <li><a href="#" className="hover:text-white">Conversion Rate Optimization</a></li>
-                  </ul>
-                </div>
+        {/* Right Section */}
+        <div className="md:w-1/2 mt-10 md:mt-0 flex flex-col md:flex-row justify-between">
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-xl font-semibold">CONTACT US</h3>
+            <p className="mt-2 font-bold">Automically</p>
+            <p className="text-gray-400">HEAD OFFICE</p>
+            <p className="text-gray-400">Nayapalli, Bhubaneshwar</p>
 
-                <div>
-                  <h3 className="text-white font-semibold">Resources</h3>
-                  <ul className="mt-2 space-y-2">
-                    <li><a href="#" className="hover:text-white">Done-for-you systems</a></li>
-                    <li><a href="#" className="hover:text-white">Careers</a></li>
-                  </ul>
-                </div>
+            <h3 className="mt-5 text-xl font-semibold">PHONE</h3>
+            <p className="text-gray-400">+91 84259 87371</p>
+            <p className="text-gray-400">+91 73600 91805</p>
 
-                <div>
-                  <h3 className="text-white font-semibold">Legal</h3>
-                  <ul className="mt-2 space-y-2">
-                    <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-                    <li><a href="#" className="hover:text-white">Terms & Conditions</a></li>
-                  </ul>
-                </div>
-              </div>
+            <h3 className="mt-5 text-xl font-semibold">EMAIL</h3>
+            <p className="text-gray-400">info@automically.com</p>
 
-              <div className="mt-6 md:mt-0">
-                <a href="#" className="text-teal-400 text-2xl hover:text-teal-300">
-                  <FaTwitter />
-                </a>
-              </div>
-            </div>
-    
-            <div className="text-center text-sm text-gray-500 mt-10 mb-0">
-              &copy;  Copyright 2025. All rights reserved by <span></span>
-              <span className="text-white font-semibold">AUTOMICLLY</span>
+            <div className="flex mt-4 space-x-3">
+              <a href="#" className="text-white hover:text-gray-400">
+                🔗
+              </a>
+              <a href="#" className="text-white hover:text-gray-400">
+                📺
+              </a>
+              <a href="#" className="text-white hover:text-gray-400">
+                🐦
+              </a>
             </div>
           </div>
+
+          {/* Business Links */}
+          <div className="mt-10 md:mt-0">
+            <h3 className="text-xl font-semibold">BUSINESS</h3>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  SERVICES
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  HOW IT WORKS?
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  PRICING
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  CONTACT US
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </motion.footer>
-    </>
+      </div>
+
+      <div className="text-center text-sm text-gray-500 mt-10 mb-0">
+              &copy; Copyright 2025. All rights reserved by <span></span>
+              <span className="text-white font-semibold">AUTOMICLLY</span>
+            </div>
+    </div>
   );
-}
+};
 
 export default Footer;

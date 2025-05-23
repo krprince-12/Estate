@@ -1,67 +1,64 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
+import logo from '../assets/logo.jpg';
+
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleScroll = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <>
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="w-full bg-gray-900 text-white flex flex-col items-center justify-center px-6 relative top-0"
-      >
-        <nav className="w-full flex items-center justify-between py-4 px-8 border border-gray-800 mt-10 rounded-xl bg-gray-800/20">
-          <div className="flex items-center space-x-2">
-            <img src="/logo.jpg" alt="Logo" className="h-9 w-10" />
-            <span className="text-xl font-semibold">AUTOMICLLY</span>
-          </div>
-          <div className="hidden md:flex space-x-6 text-gray-400">
-            <a href="#" onClick={() => handleScroll('pricing')} className="hover:text-white">Pricing</a>
-            <a href="#" onClick={() => handleScroll('about')} className="hover:text-white">About Us</a>
-            <a href="#" onClick={() => handleScroll('contact')} className="hover:text-white">Contact Us</a>
-            <a href="#" onClick={() => handleScroll('subscription')} className="hover:text-white">How it works</a>
-            <a href="#" onClick={() => handleScroll('faq')} className="hover:text-white">FAQ'S</a>
-          </div>
-          <button className="hidden md:block bg-gradient-to-r from-teal-400 to-blue-500 text-white px-6 py-2 rounded-xl font-medium shadow-lg hover:opacity-90">
-            Book Discovery call →
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+      className="relative bg-black flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 mt-0"
+    >
+      <div className="flex flex-wrap justify-between items-center w-full py-4 px-4 sm:px-8">
+        {/* Logo Section */}
+        <div className="flex items-center space-x-2">
+          <img src={logo} alt="Logo" className="w-8 h-8" />
+          <div className="text-white text-lg font-bold">automiclly</div>
+        </div>
+
+        {/* Navigation Links */}
+        <div className="hidden md:flex space-x-6 lg:space-x-11 border border-gray-400 px-4 py-2 rounded-full text-sm">
+          <Link to="services" smooth={true} duration={500} className="text-gray-400 hover:text-white transition duration-300 cursor-pointer">
+            Services
+          </Link>
+          <Link to="how-it-works" smooth={true} duration={500} className="text-gray-400 hover:text-white transition duration-300 cursor-pointer">
+            How it Works
+          </Link>
+          <Link to="pricing" smooth={true} duration={500} className="text-gray-400 hover:text-white transition duration-300 cursor-pointer">
+            Pricing
+          </Link>
+          <Link to="contact" smooth={true} duration={500} className="text-gray-400 hover:text-white transition duration-300 cursor-pointer">
+            Contact Us
+          </Link>
+        </div>
+
+        {/* Download Button */}
+        <button className="hidden md:block border border-gray-400 text-gray-400 hover:text-white hover:border-white px-4 py-1 rounded transition duration-300 cursor-pointer">
+          Download Brochure
+        </button>
+
+        {/* Mobile Menu */}
+        <div className="md:hidden flex flex-col items-center space-y-2 mt-4">
+          <Link to="services" smooth={true} duration={500} className="text-gray-400 hover:text-white transition duration-300 cursor-pointer">
+            Services
+          </Link>
+          <Link to="how-it-works" smooth={true} duration={500} className="text-gray-400 hover:text-white transition duration-300 cursor-pointer">
+            How it Works
+          </Link>
+          <Link to="pricing" smooth={true} duration={500} className="text-gray-400 hover:text-white transition duration-300 cursor-pointer">
+            Pricing
+          </Link>
+          <Link to="contact" smooth={true} duration={500} className="text-gray-400 hover:text-white transition duration-300 cursor-pointer">
+            Contact Us
+          </Link>
+          <button className="border border-gray-400 text-gray-400 hover:text-white hover:border-white px-4 py-1 rounded transition duration-300 cursor-pointer">
+            Download Brochure
           </button>
-          <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-gray-400 focus:outline-none">
-              {isOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </nav>
-        {isOpen && (
-          <div className="md:hidden flex flex-col items-center space-y-2 text-gray-400 py-4">
-            <a href="#" onClick={() => handleScroll('pricing')} className="hover:text-white">Pricing</a>
-            <a href="#" onClick={() => handleScroll('about')} className="hover:text-white">About Us</a>
-            <a href="#" onClick={() => handleScroll('contact')} className="hover:text-white">Contact Us</a>
-            <a href="#" onClick={() => handleScroll('hero')} className="hover:text-white">How it works</a>
-            <a href="#" onClick={() => handleScroll('faq')} className="hover:text-white">FAQ'S</a>
-            <button className="bg-gradient-to-r from-teal-400 to-blue-500 text-white px-6 py-2 rounded-xl font-medium shadow-lg hover:opacity-90">
-              Book Discovery call →
-            </button>
-          </div>
-        )}
-      </motion.div>
-    </>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
